@@ -59,7 +59,7 @@ class Neural_nets:
 			gradients = tape.gradient(loss_val,[layer.trainable_weights for layer in self.layers])
 			self.update_parameter(self.layers,gradients)			
 			loss.append(loss_val)
-			if epochs%10 == 0:
+			if i%10 == 0:
 				print('\r epochs = {}, loss = {}'.format(i+1,loss_val),end='')
 				sys.stdout.flush()		
 		plt.plot(loss)
